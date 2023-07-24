@@ -4,9 +4,9 @@ using MassTransit;
 
 public class TestProcessSaga : MassTransitStateMachine<TestProcessState>
 {
-    Event<TestEvent> TestEvent { get; set; }
+    Event<TestEvent>? TestEvent { get; set; }
 
-    Schedule<TestProcessState, TestCallbackEvent> TestSchedule { get; set; }
+    Schedule<TestProcessState, TestCallbackEvent>? TestSchedule { get; set; }
 
     public TestProcessSaga()
     {

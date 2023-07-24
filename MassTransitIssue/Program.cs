@@ -34,8 +34,6 @@ services.AddMassTransit(config =>
             endpointConfigurator.UseMessageRetry(r => r.Interval(5, 1000));
             endpointConfigurator.UseInMemoryOutbox();
 
-            endpointConfigurator.UsePublishMessageScheduler();
-
             endpointConfigurator.ConfigureSaga<TestProcessState>(ctx, s =>
             {
                 var partition = endpointConfigurator.CreatePartitioner(ConcurrencyLimit);
