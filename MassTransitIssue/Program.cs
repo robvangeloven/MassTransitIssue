@@ -42,8 +42,6 @@ services.AddMassTransit(config =>
                 s.Message<TestCallbackEvent>(x => x.UsePartitioner(partition, m => m.Message.CorrelationId));
             });
         });
-
-        cfg.ConfigureEndpoints(ctx);
     });
 });
 
